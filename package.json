@@ -1,0 +1,25 @@
+{
+  "name": "lottery-random",
+  "version": "1.0.0",
+  "bin": {
+    "lottery": "./src/index.mjs"
+  },
+  "type": "module",
+  "description": "随机给出一个双色球号码",
+  "main": "./src/index.mjs",
+  "scripts": {
+    "gen": "node ./src/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "random-number-csprng": "^1.0.2",
+    "superagent": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/superagent": "^4.1.10"
+  }
+}
