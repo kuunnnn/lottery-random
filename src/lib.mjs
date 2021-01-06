@@ -167,3 +167,17 @@ export async function gen_numbers( red_numbers, blue_numbers ) {
   const blue = await get_single_random_number( blue_numbers )
   return red.join( ", " ) + ", " + chalk.blue( blue.toString().padStart( 2, "0" ) )
 }
+
+/**
+ * @returns {string}
+ */
+export function current_date_string() {
+  const today = new Date()
+  const y = today.getFullYear()
+  const m = (today.getMonth() + 1).toString().padStart( 2, '0' )
+  const d = today.getDate().toString().padStart( 2, '0' )
+  const h = today.getHours().toString().padStart( 2, '0' )
+  const mm = today.getMinutes().toString().padStart( 2, '0' )
+  return `${ y }-${ m }-${ d } ${ h }:${ mm }`
+}
+

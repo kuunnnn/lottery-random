@@ -15,7 +15,7 @@ import * as lib from "./lib.mjs"
 import { print } from "./lib.mjs";
 
 lib.print( "正在拉取往期数据!" )
-const result = await lib.fetch_history( 30 )
+const result = await lib.fetch_history( 100 )
 const pool = lib.create_random_pool( result )
 const red_pool = pool.red.map( val => lib.build_random_number_pool( lib.calc_weight( val, 33 ) ) )
 const blue_pool = lib.build_random_number_pool( lib.calc_weight( pool.blue, 16 ) )
@@ -24,6 +24,7 @@ const red_total_pool = lib.build_random_number_pool( lib.calc_weight( pool.total
 const one = await lib.gen_numbers( red_pool, blue_pool )
 const two = await lib.gen_numbers( new Array( 5 ).fill( red_total_pool ), blue_pool )
 print( "" )
+console.log( "生成时间: %s", lib.current_date_string() )
 console.log( "随机第一注: %s", one )
 console.log( "随机第二注: %s", two )
 
