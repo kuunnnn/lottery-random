@@ -15,7 +15,7 @@ import * as lib from "./lib.mjs"
 import { print } from "./lib.mjs";
 
 lib.print( "正在拉取往期数据!" )
-const result = await lib.fetch_history( 30 )
+const result = await lib.fetch_history( 100 )
 const pool = lib.create_random_pool( result )
 const red_pool = pool.red.map( val => lib.build_random_number_pool( lib.calc_weight( val, 33 ) ) )
 const blue_pool = lib.build_random_number_pool( lib.calc_weight( pool.blue, 16 ) )
